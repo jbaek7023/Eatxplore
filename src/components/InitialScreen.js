@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import { Image } from 'react-native';
-import { Button, Box, BoxElement, Dropdown, Input } from "./common/index";
+import { Picker } from 'react-native'
+import { Input, Button, Box, BoxElement, Dropdown } from "./common/index";
 
 class InitialScreen extends Component {
-  state = { username: '', nationality: '', language: '', restriction: '',
-            nationalities: [], languages: [], restrictions: []
-          };
+  constructor (props) {
+    super(props);
+    this.state = {
+      username: '',
+      nationality: '',
+      language: '',
+      restriction: '',
+      nationalities: [],
+      languages: [],
+      restrictions: [] };
+  }
 
   componentWillMount() {
-  //   var data1 = require('../../data/nationalities.json');
-  //   var data2 = require('../../data/languages.json');
-  //   var data3 = require('../../data/restrictions.json');
-  //   this.setState( {nationalities: data1, languages: data2, restrictions: data3} )
+    var natls = require('../../data/nationalities');
+    var langs = require('../../data/languages');
+    var rests = require('../../data/restrictions');
+    this.setState({ nationalities: natls, languages: langs, restrictions: rests, nationality: natls[0] });
   }
+
   render() {
     return (
       <Box>
@@ -23,27 +32,46 @@ class InitialScreen extends Component {
               onChangeText={username => this.setState({ username })}
           />
         </BoxElement>
+
         <BoxElement>
-          <Input
-              placeholder="Nationality"
-              value={this.state.nationality}
-              onChangeText={nationality => this.setState({ nationality })}
-          />
+          <Dropdown
+            value={this.state.nationality}
+            onValueChage={nationality => this.state({nationality})}
+          >
+            {this.state.nationalities.map((natl) => {
+              return <Picker.Item label = {natl} value = {natl} key = {natl} />
+            })}
+          </Dropdown>
         </BoxElement>
+
         <BoxElement>
-          <Input
-              placeholder="Language"
+          <Dropdown
               value={this.state.language}
-              onChangeText={language => this.setState({ language })}
-          />
+              onValueChage={language => this.state({language})}
+          >
+            {this.state.languages.map((lang) => {
+              return <Picker.Item label = {lang.name} value = {lang.name} key = {lang.name} />
+            })}
+          </Dropdown>
         </BoxElement>
+
         <BoxElement>
-          <Input
-              placeholder="Restrictions"
+          <Dropdown
               value={this.state.restriction}
-              onChangeText={restriction => this.setState({ restriction })}
-          />
+              onValueChage={restriction => this.state({restriction})}
+          >
+            {this.state.restrictions.map((rest) => {
+              return <Picker.Item label = {rest} value = {rest} key = {rest} />
+            })}
+          </Dropdown>
         </BoxElement>
+
+        <BoxElement>
+          <Button onPress={() => console.log(this.state.username) }>
+            Start Exploring Food!
+          </Button>
+        </BoxElement>
+
       </Box>
     );
   }
