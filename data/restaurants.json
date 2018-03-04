@@ -2,11 +2,13 @@
   {
     "name":"Escorpion",
     "type":"Mexican, Bar",
-    "image":""
+    "distance": 0.1,
+    "image":"https://www.midtownatl.com/_files/images/escorpion-new-logo-black.jpg"
   },
   {
     "name":"The Melting Pot",
     "type":"Fondue",
-    "image":""
+    "distance": 0.4,
+    "image":"http://gacetagin.gingroup.com/wp-content/uploads/2017/08/Captura-de-pantalla-2017-08-02-a-las-12.03.38-p.m..png"
   }
 ]

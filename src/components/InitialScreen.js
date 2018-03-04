@@ -12,7 +12,8 @@ class InitialScreen extends Component {
       restriction: '',
       nationalities: [],
       languages: [],
-      restrictions: [] };
+      restrictions: []
+    };
   }
 
   componentWillMount() {
@@ -36,7 +37,7 @@ class InitialScreen extends Component {
         <BoxElement>
           <Dropdown
             value={this.state.nationality}
-            onValueChage={nationality => this.state({nationality})}
+            onValueChage={nationality => this.state({ nationality })}
           >
             {this.state.nationalities.map((natl) => {
               return <Picker.Item label = {natl} value = {natl} key = {natl} />
@@ -47,7 +48,7 @@ class InitialScreen extends Component {
         <BoxElement>
           <Dropdown
               value={this.state.language}
-              onValueChage={language => this.state({language})}
+              onValueChage={language => this.state({ language })}
           >
             {this.state.languages.map((lang) => {
               return <Picker.Item label = {lang.name} value = {lang.name} key = {lang.name} />
@@ -58,7 +59,7 @@ class InitialScreen extends Component {
         <BoxElement>
           <Dropdown
               value={this.state.restriction}
-              onValueChage={restriction => this.state({restriction})}
+              onValueChage={restriction => this.state({ restriction })}
           >
             {this.state.restrictions.map((rest) => {
               return <Picker.Item label = {rest} value = {rest} key = {rest} />
@@ -77,4 +78,4 @@ class InitialScreen extends Component {
   }
 }
 
-export default InitialScreen;
+export { InitialScreen };
