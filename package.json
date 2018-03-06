@@ -2,9 +2,14 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
+    "babel-preset-react-native": "2.1.0",
     "expo": "^25.0.0",
+    "native-base": "^2.3.9",
     "react": "16.2.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "yarn": "^1.5.1"
   }
 }

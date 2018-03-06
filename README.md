@@ -1,0 +1,45 @@
+# Happy Restaurant
+
+### PLAN
+- react-navigation StackNavigator
+- Tab bar
+1) Hamburger
+1.1) icon, search icon
+2) Style
+
+- List
+1) Data
+2) Flatlist
+3)
+
+- Restaurant Detail
+- Recommendation Tab Bar in two
+1) native-base tab bar
+2)
+
+
+# SCRUM
+1. List
+  - react-navigation
+  - TabBar at tome
+  - Hamburger button
+
+2. Restaurant Detail
+  - Recommendation & - Full Menu Tap  
+
+### Error
+1) Error on watchman at the beginning of the program run
+2.0-. jest-haste-map: Watchman crawl failed. Retrying once with node crawler.
+
+echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
+echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
+echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
+watchman shutdown-server
+watchman watch-del-all
+and restart project
+
+2) Building error type:transform Error
+yarn remove babel-preset-react-native
+yarn add babel-preset-react-native@2.1.0
+
+3) ... 
