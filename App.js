@@ -5,9 +5,9 @@ import { Platform, StatusBar, StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store';
 
-// Local Components
-import { Header, Dropdown } from './src/components/common';
-import { RestaurantList, InitialScreen } from "./src/components/";
+// import navigation
+import RootNavigation from './navigation/RootNavigation';
+
 
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
@@ -21,8 +21,6 @@ export default class App extends React.Component {
     this._loadAssetsAsync();
   }
 
-// We are importing navigation  here.
-// <RootNavigation />
   render() {
     if (!this.state.assetsAreLoaded && !this.props.skipLoadingScreen) {
       return <AppLoading />;
@@ -33,10 +31,7 @@ export default class App extends React.Component {
             {Platform.OS === 'ios' && <StatusBar barStyle="light-content"/>}
             {Platform.OS === 'android' &&
               <View style={styles.statusBarUnderlay} />}
-              <View style={ {flex: 1}}>
-                <Header headerText={'Stunner'} />
-                <RestaurantList />
-              </View>
+              <RootNavigation />
           </View>
         </Provider>
       );

@@ -25,4 +25,4 @@ class RestaurantList extends Component {
   }
 }
 
-export { RestaurantList };
+export default RestaurantList ;

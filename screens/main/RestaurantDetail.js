@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { Box, BoxElement } from './common';
+import { Box, BoxElement } from '../../components/common';
 
 const RestaurantDetail = ({ restaurant }) => {
   const { name, type, distance, image } = restaurant;
