@@ -4,7 +4,6 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import MainDrawerNavigator from './MainDrawerNavigator';
 import AuthStackNavigator from './AuthStackNavigator';
-
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 
 const RootTabNavigator = TabNavigator ({

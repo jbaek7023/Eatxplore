@@ -8,7 +8,6 @@
 - List
 1) Data
 2) Flatlist
-3) 
 
 - Restaurant Detail
 - Recommendation Tab Bar in two

@@ -1,12 +1,12 @@
 import React from 'react';
 import { DrawerNavigator } from 'react-navigation';
-import RestaurantList from '../screens/main/RestaurantList';
+
 import SideBar from '../components/SideBar';
+import MainStackNavigator from './MainStackNavigator';
 
 const MainDrawerNavigator = DrawerNavigator ({
-  List: {
-    // StackNavigator Here next time
-    screen: RestaurantList,
+  MainList: {
+    screen: MainStackNavigator,
   },
 }, {
     // header: null,
@@ -15,6 +15,8 @@ const MainDrawerNavigator = DrawerNavigator ({
     //   header: null
     // },
     contentComponent: props => <SideBar {...props} />,
+    drawerPosition: 'left',
+    headerMode: 'screen',
     // lazy: true
   }
 );

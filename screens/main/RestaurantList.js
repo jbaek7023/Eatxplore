@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-import { ScrollView, View, FlatList } from 'react-native';
+import { ScrollView, View, FlatList, Text } from 'react-native';
 import { RestaurantDetail } from "./RestaurantDetail";
-import { Header } from '../../components/common'
+import Header from '../../components/Header';
 
 class RestaurantList extends Component {
   static navigationOptions = {
     title: 'List',
-    header: {
-      visible: true
-    },
-    initialRouteName: 'SecondScreen',
-    headerMode: 'screen',
-    headerTitle: 'Second Screen Header',
-    drawerLabel: 'Second Screen',
   };
 
   state = { restaurants: [] };
@@ -24,7 +17,7 @@ class RestaurantList extends Component {
 
   _renderItem = ({item}) => {
     return (
-      <RestaurantDetail key={item.id} restaurant={item} />
+      <RestaurantDetail key={item.id} restaurant={item} navigation={this.props.navigation}/>
     );
   }
 
@@ -32,17 +25,22 @@ class RestaurantList extends Component {
 
   render() {
     let { restaurants } = this.state;
-    return (
-      <View style={{flex:1}}>
-        <ScrollView>
-          <FlatList
-            data={restaurants}
-            keyExtractor={this._keyExtractor}
-            renderItem={this._renderItem}
-          />
-        </ScrollView>
-      </View>
-    );
+    if (restaurants) {
+      return (
+        <View style={{flex:1}}>
+          <Header headerText="Restaurant List"/>
+          <ScrollView>
+            <FlatList
+              data={restaurants}
+              keyExtractor={this._keyExtractor}
+              renderItem={this._renderItem}
+            />
+          </ScrollView>
+        </View>
+      );
+    }
+    // Loading screen later
+    return <View/>;
   }
 }
 
