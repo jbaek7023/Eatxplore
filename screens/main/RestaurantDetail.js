@@ -1,50 +1,77 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Box, BoxElement } from '../../components/common';
+import { Icon } from 'native-base';
+import { FontAwesome } from '../../assets/icons';
 
 const RestaurantDetail = ({ restaurant }) => {
   const { name, type, distance, image } = restaurant;
-  const { headerContentStyle, imageStyle } = styles;
+  const { headerContentStyle } = styles;
 
   return (
-      <Box>
-        <BoxElement>
-          <TouchableOpacity style={imageStyle} onPress={()=>{console.log(name)}}>
-            <Image
-              style={ imageStyle }
-              source={ {uri: image} }
-            />
-          </TouchableOpacity>
-        </BoxElement>
-
-        <BoxElement>
-          <View style={ headerContentStyle }>
-            <Text>{ name }</Text>
-            <Text>{ distance } miles</Text>
-          </View>
-        </BoxElement>
-
-        <BoxElement>
-          <View style={ headerContentStyle }>
-            <Text>{ type }</Text>
-          </View>
-        </BoxElement>
-
-      </Box>
+    <View style={styles.restaurantBoxStyle}>
+      <TouchableOpacity style={styles.imageContainer} onPress={()=>{console.log(name)}}>
+        <Image
+          style={styles.imageStyle}
+          source={{uri: image}}
+        />
+      </TouchableOpacity>
+      <View style={styles.restaurantBottomContainer}>
+        <View style={styles.restaurantLeftContainer}>
+          <Text style={styles.restaurantTitle}>{ name }</Text>
+          <Text style={styles.restaurantKind}>{ type }</Text>
+        </View>
+        <View style={styles.restaurantRightContainer}>
+          <Text><Text style={styles.awesome}>{FontAwesome.place}</Text> { distance } miles</Text>
+        </View>
+      </View>
+    </View>
   );
+  // fa-map-marker
 }
 
 const styles = {
-  headerContentStyle: {
+  restaurantLeftContainer: {
+    paddingLeft: 15,
+  },
+  restaurantRightContainer: {
+    paddingRight: 15,
+  },
+  restaurantTitle: {
+    fontSize: 20,
+    fontWeight: 'bold'
+  },
+  restaurantKind: {
+    fontSize: 15,
+  },
+  awesome : {
+    fontFamily: 'fontawesome'
+  },
+  restaurantBoxStyle: {
+    padding: 10,
+    margin: 10,
+    borderWidth: 1,
+    borderColor: 'black'
+  },
+  restaurantBottomContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: 5,
+  },
+  imageContainer: {
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 200,
+    flex: 1,
+    margin: 1,
   },
   imageStyle: {
-    height: 300,
-    flex: 1,
-    width: null
+    width: null,
+    height: 200,
+    resizeMode: 'center',
+    opacity: 1,
   }
 };
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, View, FlatList, Text } from 'react-native';
+import { ScrollView, View, FlatList, Text, StyleSheet } from 'react-native';
+import { H1, H2, H3 } from 'native-base';
 import { RestaurantDetail } from "./RestaurantDetail";
 import Header from '../../components/Header';
 
@@ -33,11 +34,15 @@ class RestaurantList extends Component {
       return (
         <View style={{flex:1}}>
           <Header
-            headerText="Restaurant List"
+            headerText="App Name"
             navigation={this.props.navigation}
             drawerToggle={this._drawerToggle}
-            />
-          <ScrollView>
+          />
+          <ScrollView style={styles.listContainer}>
+            <View style={styles.locationTitleContainer}>
+              <H2 style={styles.locationTitle}>You Might Be At...</H2>
+              <Text>Based on your location</Text>
+            </View>
             <FlatList
               data={restaurants}
               keyExtractor={this._keyExtractor}
@@ -50,5 +55,20 @@ class RestaurantList extends Component {
     return <View/>;
   }
 }
+
+const styles = StyleSheet.create({
+  locationTitleContainer: {
+    padding: 15,
+    paddingTop: 25,
+    paddingBottom: 0,
+  },
+  locationTitle: {
+    fontWeight: 'bold',
+  },
+  listContainer: {
+    backgroundColor: '#FFFFFF',
+  },
+});
+
 
 export default RestaurantList;
