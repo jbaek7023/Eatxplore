@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { ScrollView, View, FlatList, Text, StyleSheet } from 'react-native';
-import { H1, H2, H3 } from 'native-base';
+import { Tab, Tabs } from 'native-base'
 import RestaurantListItem from "./RestaurantListItem";
 import { RestaurantDetailTop } from './RestaurantDetailTop';
+import { RestaurantDetailBottom } from './RestaurantDetailBottom';
 import Header from '../../components/Header';
 
 class RestaurantDetail extends Component {
@@ -30,18 +31,20 @@ class RestaurantDetail extends Component {
   }
 
   render() {
+    let { restaurant } = this.props.navigation.state.params;
     let { restaurants } = this.state;
     if (restaurants) {
       return (
-        <View style={{flex:1}}>
+        <View style={{flex:1, backgroundColor: 'white'}}>
           <Header
             headerText="The Melting Pot"
             navigation={this.props.navigation}
             drawerToggle={this._drawerToggle}
+            back={true}
           />
           <ScrollView style={styles.listContainer}>
-            <RestaurantDetailTop restaurant={restaurants[1]}/>
-            
+            <RestaurantDetailTop restaurant={restaurant}/>
+            <RestaurantDetailBottom/>
           </ScrollView>
         </View>
       );
@@ -51,17 +54,17 @@ class RestaurantDetail extends Component {
 }
 
 const styles = StyleSheet.create({
-  locationTitleContainer: {
-    padding: 15,
-    paddingTop: 25,
-    paddingBottom: 0,
-  },
-  locationTitle: {
-    fontWeight: 'bold',
-  },
-  listContainer: {
-    backgroundColor: '#FFFFFF',
-  },
+    locationTitleContainer: {
+      padding: 15,
+      paddingTop: 25,
+      paddingBottom: 0,
+    },
+    locationTitle: {
+      fontWeight: 'bold',
+    },
+    listContainer: {
+      backgroundColor: '#FFFFFF',
+    },
 });
 
 export default RestaurantDetail;

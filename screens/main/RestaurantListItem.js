@@ -4,8 +4,8 @@ import { Icon } from 'native-base';
 import { FontAwesome } from '../../assets/icons';
 
 class RestaurantListItem extends Component {
-  _pressItem = () => {
-    this.props.navigation.navigate('RestaurantDetail');
+  _pressItem = (restaurant) => {
+    this.props.navigation.navigate('RestaurantDetail', {restaurant});
   }
 
   render() {
@@ -14,7 +14,7 @@ class RestaurantListItem extends Component {
 
     return (
       <View style={styles.restaurantBoxStyle}>
-        <TouchableOpacity style={styles.imageContainer} onPress={()=>{this._pressItem()}}>
+        <TouchableOpacity style={styles.imageContainer} onPress={()=>{this._pressItem(this.props.restaurant)}}>
           <Image
             style={styles.imageStyle}
             source={{uri: image}}

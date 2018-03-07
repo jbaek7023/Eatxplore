@@ -32,11 +32,6 @@ class MenuList extends Component {
     if (menu) {
       return (
           <View style={{flex:1}}>
-            <Header
-                headerText="Escorpion"
-                navigation={this.props.navigation}
-                drawerToggle={this._drawerToggle}
-            />
             <ScrollView>
               <Text style={{fontSize: 40}}>Recommendations</Text>
               <Text style={{fontSize: 25}}> What Chinese People Like</Text>
