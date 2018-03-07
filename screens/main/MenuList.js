@@ -19,42 +19,33 @@ class MenuList extends Component {
 
   _keyExtractor = (item, index) => item.id;
 
-  _drawerToggle = () => {
-    this.props.navigation.navigate('DrawerOpen');
-  }
-
-  _getRestaurant = () => {
-    return require('../../data/restaurants')[0];
-  }
-
   render() {
     let { menu } = this.state;
     if (menu) {
       return (
           <View style={{flex:1}}>
-            <ScrollView>
-              <Text style={{fontSize: 40}}>Recommendations</Text>
-              <Text style={{fontSize: 25}}> What Chinese People Like</Text>
-              <Text style={{fontSize: 20}}> Based on your nationality</Text>
-              <FlatList
-                  data={menu[0]}
-                  keyExtractor={this._keyExtractor}
-                  renderItem={this._renderItem}
-              />
-              <Text style={{fontSize: 25}}> What Mexican People Like</Text>
-              <Text style={{fontSize: 20}}> Based on restaurant's nationality</Text>
-              <FlatList
-                  data={menu[1]}
-                  keyExtractor={this._keyExtractor}
-                  renderItem={this._renderItem}
-              />
-              <Text style={{fontSize: 40}}>Full Menu</Text>
-              <FlatList
-                  data={menu[2]}
-                  keyExtractor={this._keyExtractor}
-                  renderItem={this._renderItem}
-              />
-            </ScrollView>
+
+            <Text style={{fontSize: 40}}>Recommendations</Text>
+            <Text style={{fontSize: 25}}> What Chinese People Like</Text>
+            <Text style={{fontSize: 20}}> Based on your nationality</Text>
+            <FlatList
+                data={menu[0]}
+                keyExtractor={this._keyExtractor}
+                renderItem={this._renderItem}
+            />
+            <Text style={{fontSize: 25}}> What Mexican People Like</Text>
+            <Text style={{fontSize: 20}}> Based on restaurant's nationality</Text>
+            <FlatList
+                data={menu[1]}
+                keyExtractor={this._keyExtractor}
+                renderItem={this._renderItem}
+            />
+            <Text style={{fontSize: 40}}>Full Menu</Text>
+            <FlatList
+                data={menu[2]}
+                keyExtractor={this._keyExtractor}
+                renderItem={this._renderItem}
+            />
           </View>
       );
     }
