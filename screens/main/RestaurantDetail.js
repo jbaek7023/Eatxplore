@@ -4,12 +4,12 @@ import { Box, BoxElement } from '../../components/common';
 
 const RestaurantDetail = ({ restaurant }) => {
   const { name, type, distance, image } = restaurant;
-  const { headerContentStyle, leftMost, rightMost, imageStyle } = styles;
+  const { headerContentStyle, imageStyle } = styles;
 
   return (
       <Box>
         <BoxElement>
-          <TouchableOpacity onPress={() => {console.log(name)}}>
+          <TouchableOpacity style={imageStyle} onPress={()=>{console.log(name)}}>
             <Image
               style={ imageStyle }
               source={ {uri: image} }
