@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ScrollView, View, FlatList, Text } from 'react-native';
 import { MenuDetail } from "./MenuDetail";
 import Header from '../../components/Header';
-import {RestaurantDetail} from "./RestaurantDetail";
 
 class MenuList extends Component {
   state = { menu: [] };

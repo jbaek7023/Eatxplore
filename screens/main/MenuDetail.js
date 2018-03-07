@@ -10,24 +10,23 @@ const MenuDetail = ({ menu }) => {
       <Box>
         <TouchableOpacity>
           <View style={ {flex: 1, flexDirection: 'row'}}>
-
             <View style={ {flex: 1} }>
-                <Image
-                  style={ imageStyle }
-                  source={ {uri: image} }
-                />
+              <Image
+                style={ imageStyle }
+                source={ {uri: image} }
+              />
             </View>
             <View style={ {flex: 3} }>
-                <View style={ {flex: 1, flexDirection: 'column' }}>
-                  <Text>{ name }</Text>
-                  <Text>{ price }</Text>
-                </View>
-                <View style={ {flex: 1} }>
-                  <Text>{ type }</Text>
-                </View>
-                <View style={ {flex: 2} }>
-                  <Text>{ description }</Text>
-                </View>
+              <View style={ {flex: 1, flexDirection: 'column' }}>
+                <Text>{ name }</Text>
+                <Text>{ price }</Text>
+              </View>
+              <View style={ {flex: 1} }>
+                <Text>{ type }</Text>
+              </View>
+              <View style={ {flex: 2} }>
+                <Text>{ description }</Text>
+              </View>
             </View>
           </View>
         </TouchableOpacity>

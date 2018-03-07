@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ScrollView, View, FlatList, Text, StyleSheet } from 'react-native';
 import { H1, H2, H3 } from 'native-base';
-import  RestaurantDetail from "./RestaurantDetail";
+import RestaurantListItem from "./RestaurantListItem";
 import Header from '../../components/Header';
 
 class RestaurantList extends Component {
@@ -18,7 +18,7 @@ class RestaurantList extends Component {
 
   _renderItem = ({item}) => {
     return (
-      <RestaurantDetail key={item.id} restaurant={item} navigation={this.props.navigation}/>
+      <RestaurantListItem key={item.id} restaurant={item} navigation={this.props.navigation}/>
     );
   }
 
