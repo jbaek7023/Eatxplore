@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import { FontAwesome } from '../../assets/icons';
-import { Tab, Tabs } from 'native-base'
-import MenuList from './MenuList';
-import {MenuDetail} from "./MenuDetail";
+import { Tab, Tabs } from 'native-base';
+import { MenuDetail } from "./MenuDetail";
 
 class RestaurantDetailBottom extends Component {
   state = { menu: [] };
@@ -30,23 +29,23 @@ class RestaurantDetailBottom extends Component {
               activeTabStyle={styles.activeTabStyle}
               activeTextStyle={styles.activeTextStyle}
               textStyle={styles.textStyle}>
-            <MenuList>
-              <Text style={{fontSize: 40}}>Recommendations</Text>
-              <Text style={{fontSize: 25}}> What Chinese People Like</Text>
-              <Text style={{fontSize: 20}}> Based on your nationality</Text>
+            <View style={styles.recommendationContainer}>
+              <Text style={styles.titleFont}>Recommendations</Text>
+              <Text style={styles.subTitleFont}>What Chinese People Like</Text>
+              <Text>Based on your nationality</Text>
               <FlatList
                   data={this.state.menu[0]}
                   keyExtractor={this._keyExtractor}
                   renderItem={this._renderItem}
               />
-              <Text style={{fontSize: 25}}> What Mexican People Like</Text>
-              <Text style={{fontSize: 20}}> Based on restaurant's nationality</Text>
+              <Text style={styles.subTitleFont}> What Mexican People Like</Text>
+              <Text>{"Based on restaurant's nationality"}</Text>
               <FlatList
                   data={this.state.menu[1]}
                   keyExtractor={this._keyExtractor}
                   renderItem={this._renderItem}
               />
-            </MenuList>
+            </View>
           </Tab>
           <Tab
               heading="Full Menu"
@@ -54,14 +53,15 @@ class RestaurantDetailBottom extends Component {
               activeTabStyle={styles.activeTabStyle}
               activeTextStyle={styles.activeTextStyle}
               textStyle={styles.textStyle}>
-            <MenuList>
-              <Text style={{fontSize: 40}}>Full Menu</Text>
+            <View style={styles.fullmenuContainer}>
+              <Text style={styles.titleFont}>Full Menu</Text>
+              <Text style={styles.subTitleFont}>Antojitos (Appetizers)</Text>
               <FlatList
                   data={this.state.menu[2]}
                   keyExtractor={this._keyExtractor}
                   renderItem={this._renderItem}
               />
-            </MenuList>
+            </View>
           </Tab>
         </Tabs>
     );
@@ -70,6 +70,21 @@ class RestaurantDetailBottom extends Component {
 }
 
 const styles = StyleSheet.create({
+  recommendationContainer: {
+    padding: 10,
+  },
+  fullmenuContainer: {
+    padding: 10,
+  },
+  titleFont: {
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
+  subTitleFont: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 15,
+  },
   tabStyle : {
     backgroundColor: 'white',
     justifyContent: 'center',

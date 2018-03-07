@@ -37,7 +37,7 @@ class RestaurantDetail extends Component {
       return (
         <View style={{flex:1, backgroundColor: 'white'}}>
           <Header
-            headerText="The Melting Pot"
+            headerText={restaurant.name}
             navigation={this.props.navigation}
             drawerToggle={this._drawerToggle}
             back={true}

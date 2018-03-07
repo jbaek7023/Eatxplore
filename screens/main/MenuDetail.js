@@ -1,40 +1,55 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { Box, BoxElement } from '../../components/common';
+import { H2, H3 } from 'native-base';
 
 const MenuDetail = ({ menu }) => {
   const { name, type, price, description, image } = menu;
   const { imageStyle } = styles
 
   return (
-      <Box>
-        <TouchableOpacity>
-          <View style={ {flex: 1, flexDirection: 'row'}}>
-            <View style={ {flex: 1} }>
-              <Image
-                style={ imageStyle }
-                source={ {uri: image} }
-              />
-            </View>
-            <View style={ {flex: 3} }>
-              <View style={ {flex: 1, flexDirection: 'column' }}>
-                <Text>{ name }</Text>
-                <Text>{ price }</Text>
-              </View>
-              <View style={ {flex: 1} }>
-                <Text>{ type }</Text>
-              </View>
-              <View style={ {flex: 2} }>
-                <Text>{ description }</Text>
-              </View>
-            </View>
-          </View>
-        </TouchableOpacity>
-      </Box>
+    <TouchableOpacity style={styles.menuItemContainer}>
+      <View style={styles.imageContainer}>
+        <Image
+          style={ imageStyle }
+          source={{uri: image}}/>
+      </View>
+      <View style={styles.textContainer}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+          <H3 style={{fontWeight: 'bold'}}>{ name }</H3>
+          <Text style={{marginRight: 20}}>$ {price}</Text>
+        </View>
+        <View style={{marginBottom: 5}}>
+          <Text>{ type }</Text>
+        </View>
+        <View>
+          <Text>{ description }</Text>
+        </View>
+      </View>
+
+    </TouchableOpacity>
+
   );
 }
 
 const styles = {
+  menuItemContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    margin:5,
+    borderWidth:1,
+    borderColor: '#AAAAAA',
+  },
+  imageContainer: {
+    height: 100,
+    width: 100,
+  },
+  textContainer: {
+    paddingLeft: 7,
+    paddingBottom: 7,
+    paddingTop: 7,
+    flex: 1,
+    flexWrap: 'wrap',
+  },
   headerContentStyle: {
     flex: 1,
     flexDirection: 'row',
