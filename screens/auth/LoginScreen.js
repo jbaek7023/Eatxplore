@@ -27,7 +27,6 @@ class LoginScreen extends Component {
     var langs = require('../../data/languages');
     var rests = require('../../data/restrictions');
     this.setState({ nationalities: natls, languages: langs, restrictions: rests, nationality: natls[0], language: langs[0].name, restriction: rests[0] });
-    console.log(this.state.nationalities);
   }
 
   render() {
@@ -36,10 +35,8 @@ class LoginScreen extends Component {
           <Header
               headerText="App Name"
               navigation={this.props.navigation}
-              drawerToggle={this._drawerToggle}
-          />
+              drawerToggle={this._drawerToggle}/>
           <Box>
-
             <BoxElement>
               <Input
                   placeholder="Username"
@@ -47,13 +44,12 @@ class LoginScreen extends Component {
                   onChangeText={username => this.setState({ username })}
               />
             </BoxElement>
-
             <BoxElement>
               <Picker
-                  iosHeader="Select Nationality"
-                  mode="dropdown"
-                  selectedValue={this.state.nationality}
-                  onValueChange={nationality => this.setState({ nationality })}>
+                iosHeader="Select Nationality"
+                mode="dropdown"
+                selectedValue={this.state.nationality}
+                onValueChange={nationality => this.setState({ nationality })}>
                 {this.state.nationalities.map((natl) => {
                   return <Item label = {natl} value = {natl} key = {natl} />
                 })}
