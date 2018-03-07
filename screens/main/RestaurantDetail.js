@@ -4,7 +4,7 @@ import { Box, BoxElement } from '../../components/common';
 
 const RestaurantDetail = ({ restaurant }) => {
   const { name, type, distance, image } = restaurant;
-  const { headerContentStyle, headerTextStyle, imageStyle } = styles;
+  const { headerContentStyle, leftMost, rightMost, imageStyle } = styles;
 
   return (
       <Box>
@@ -19,14 +19,14 @@ const RestaurantDetail = ({ restaurant }) => {
 
         <BoxElement>
           <View style={ headerContentStyle }>
-            <Text style={headerTextStyle}>{ name }</Text>
-            <Text style={headerTextStyle}>{ distance } miles</Text>
+            <Text>{ name }</Text>
+            <Text>{ distance } miles</Text>
           </View>
         </BoxElement>
 
         <BoxElement>
           <View style={ headerContentStyle }>
-            <Text style={headerTextStyle}>{ type }</Text>
+            <Text>{ type }</Text>
           </View>
         </BoxElement>
 
@@ -36,11 +36,10 @@ const RestaurantDetail = ({ restaurant }) => {
 
 const styles = {
   headerContentStyle: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around'
-  },
-  headerTextStyle: {
-    fontSize: 18
+    justifyContent: 'space-between',
+    alignItems: 'center'
   },
   imageStyle: {
     height: 300,
