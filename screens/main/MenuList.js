@@ -23,7 +23,7 @@ class MenuList extends Component {
     let { menu } = this.state;
     if (menu) {
       return (
-          <View style={{flex:1}}>
+          <View>
 
             <Text style={{fontSize: 40}}>Recommendations</Text>
             <Text style={{fontSize: 25}}> What Chinese People Like</Text>
@@ -34,18 +34,22 @@ class MenuList extends Component {
                 renderItem={this._renderItem}
             />
             <Text style={{fontSize: 25}}> What Mexican People Like</Text>
-            <Text style={{fontSize: 20}}> Based on restaurant's nationality</Text>
+            <Text style={{fontSize: 20}}>{"Based on restaurant's nationality"}</Text>
+            <View style={{alignItems: 'center'}}>
             <FlatList
                 data={menu[1]}
                 keyExtractor={this._keyExtractor}
                 renderItem={this._renderItem}
             />
+            </View>
             <Text style={{fontSize: 40}}>Full Menu</Text>
+            <View style={{alignItems: 'center'}}>
             <FlatList
                 data={menu[2]}
                 keyExtractor={this._keyExtractor}
                 renderItem={this._renderItem}
             />
+            </View>
           </View>
       );
     }
