@@ -29,7 +29,6 @@ const RestaurantDetail = ({ restaurant }) => {
             <Text>{ type }</Text>
           </View>
         </BoxElement>
-
       </Box>
   );
 }
