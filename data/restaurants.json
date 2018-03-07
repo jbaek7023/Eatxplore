@@ -1,11 +1,13 @@
 [
   {
+    "id": 1,
     "name":"Escorpion",
     "type":"Mexican, Bar",
     "distance": 0.1,
     "image":"https://www.midtownatl.com/_files/images/escorpion-new-logo-black.jpg"
   },
   {
+    "id": 2,
     "name":"The Melting Pot",
     "type":"Fondue",
     "distance": 0.4,

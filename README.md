@@ -1,16 +1,14 @@
 # Happy Restaurant
 
 ### PLAN
-- react-navigation StackNavigator
 - Tab bar
-1) Hamburger
-1.1) icon, search icon
-2) Style
+  1) Hamburger (Problem : https://github.com/react-navigation/react-navigation/issues/165
+  https://github.com/react-navigation/react-navigation/issues/1632)
 
 - List
 1) Data
 2) Flatlist
-3)
+3) 
 
 - Restaurant Detail
 - Recommendation Tab Bar in two
@@ -42,4 +40,4 @@ and restart project
 yarn remove babel-preset-react-native
 yarn add babel-preset-react-native@2.1.0
 
-3) ... 
+3) ...

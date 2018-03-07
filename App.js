@@ -72,6 +72,5 @@ const styles = StyleSheet.create({
   },
   statusBarUnderlay: {
     height: 24,
-    backgroundColor: '#6F3AB1',
   },
 });

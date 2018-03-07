@@ -2,7 +2,7 @@ import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
 
-import MainStackNavigator from './MainStackNavigator';
+import MainDrawerNavigator from './MainDrawerNavigator';
 import AuthStackNavigator from './AuthStackNavigator';
 
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
@@ -12,7 +12,7 @@ const RootTabNavigator = TabNavigator ({
       screen: AuthStackNavigator,
     },
     Main: {
-      screen: MainStackNavigator,
+      screen: MainDrawerNavigator,
     },
   }, {
     // change later to Auth
