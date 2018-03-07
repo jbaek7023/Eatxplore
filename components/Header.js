@@ -3,14 +3,10 @@ import { TouchableWithoutFeedback, View, Text, StyleSheet } from 'react-native';
 import { Icon } from 'native-base';
 
 class Header extends Component {
-  _drawerToggle = () => {
-    this.props.navigation.navigate('DrawerOpen');
-  }
-
   render() {
     return (
       <View style={styles.viewStyle}>
-        <TouchableWithoutFeedback onPress={()=>{this._drawerToggle()}}>
+        <TouchableWithoutFeedback onPress={()=>{this.props.drawerToggle()}}>
           <Icon name="menu"/>
         </TouchableWithoutFeedback>
         <Text style={styles.textStyle}>{this.props.headerText}</Text>

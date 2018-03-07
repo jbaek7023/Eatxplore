@@ -17,18 +17,26 @@ class RestaurantList extends Component {
 
   _renderItem = ({item}) => {
     return (
-      <RestaurantDetail key={item.id} restaurant={item} navigation={this.props.navigation}/>
+      <RestaurantDetail key={item.id} restaurant={item}/>
     );
   }
 
   _keyExtractor = (item, index) => item.id;
+
+  _drawerToggle = () => {
+    this.props.navigation.navigate('DrawerOpen');
+  }
 
   render() {
     let { restaurants } = this.state;
     if (restaurants) {
       return (
         <View style={{flex:1}}>
-          <Header headerText="Restaurant List"/>
+          <Header
+            headerText="Restaurant List"
+            navigation={this.props.navigation}
+            drawerToggle={this._drawerToggle}
+            />
           <ScrollView>
             <FlatList
               data={restaurants}
@@ -39,7 +47,6 @@ class RestaurantList extends Component {
         </View>
       );
     }
-    // Loading screen later
     return <View/>;
   }
 }

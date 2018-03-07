@@ -17,6 +17,7 @@ const MainDrawerNavigator = DrawerNavigator ({
     contentComponent: props => <SideBar {...props} />,
     drawerPosition: 'left',
     headerMode: 'screen',
+    drawerPosition: 'left',
     // lazy: true
   }
 );
