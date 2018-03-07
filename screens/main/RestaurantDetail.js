@@ -1,33 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { Box, BoxElement } from '../../components/common';
 import { Icon } from 'native-base';
 import { FontAwesome } from '../../assets/icons';
 
-const RestaurantDetail = ({ restaurant }) => {
-  const { name, type, distance, image } = restaurant;
-  const { headerContentStyle } = styles;
+class RestaurantDetail extends Component {
+  _pressItem = () => {
+    this.props.navigation.navigate('MenuList');
+  }
 
-  return (
-    <View style={styles.restaurantBoxStyle}>
-      <TouchableOpacity style={styles.imageContainer} onPress={()=>{console.log(name)}}>
-        <Image
-          style={styles.imageStyle}
-          source={{uri: image}}
-        />
-      </TouchableOpacity>
-      <View style={styles.restaurantBottomContainer}>
-        <View style={styles.restaurantLeftContainer}>
-          <Text style={styles.restaurantTitle}>{ name }</Text>
-          <Text style={styles.restaurantKind}>{ type }</Text>
-        </View>
-        <View style={styles.restaurantRightContainer}>
-          <Text><Text style={styles.awesome}>{FontAwesome.place}</Text> { distance } miles</Text>
+  render() {
+    const { name, type, distance, image } = this.props.restaurant;
+    const { headerContentStyle } = styles;
+
+    return (
+      <View style={styles.restaurantBoxStyle}>
+        <TouchableOpacity style={styles.imageContainer} onPress={()=>{this._pressItem()}}>
+          <Image
+            style={styles.imageStyle}
+            source={{uri: image}}
+          />
+        </TouchableOpacity>
+        <View style={styles.restaurantBottomContainer}>
+          <View style={styles.restaurantLeftContainer}>
+            <Text style={styles.restaurantTitle}>{ name }</Text>
+            <Text style={styles.restaurantKind}>{ type }</Text>
+          </View>
+          <View style={styles.restaurantRightContainer}>
+            <Text><Text style={styles.awesome}>{FontAwesome.place}</Text> { distance } miles</Text>
+          </View>
         </View>
       </View>
-    </View>
-  );
-  // fa-map-marker
+
+    );
+  }
 }
 
 const styles = {
@@ -75,4 +81,4 @@ const styles = {
   }
 };
 
-export { RestaurantDetail };
+export default RestaurantDetail ;
