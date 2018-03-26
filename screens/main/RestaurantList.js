@@ -23,10 +23,10 @@ class RestaurantList extends Component {
           lon: -84.3831,
           sort: 'real_distance'
         }
-      }).then(function (response) {
+      }).then((response) => {
         if (response) {
-          console.log(response.data["restaurants"]);
-          // this.setState({ restaurants: response.data["restaurants"] });
+          restaurants = response.data["restaurants"]
+          this.setState({ restaurants });
         }
       }).catch(function (error) {
         console.log(error)
@@ -35,11 +35,11 @@ class RestaurantList extends Component {
 
   _renderItem = ({item}) => {
     return (
-      <RestaurantListItem key={item.id} restaurant={item} navigation={this.props.navigation}/>
+      <RestaurantListItem key={item.restaurant.R.res_id} restaurant={item} navigation={this.props.navigation}/>
     );
   }
 
-  _keyExtractor = (item, index) => item.id;
+  _keyExtractor = (item, index) => item.restaurant.R.res_id;
 
   _drawerToggle = () => {
     this.props.navigation.navigate('DrawerOpen');
