@@ -3,22 +3,42 @@ import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import { FontAwesome } from '../../assets/icons';
 import { Tab, Tabs } from 'native-base';
 import { MenuDetail } from "./MenuDetail";
+import axios from 'axios';
 
 class RestaurantDetailBottom extends Component {
   state = { menu: [] };
 
   componentWillMount() {
+    console.log(this.props.restaurant.name);
     var menu = require('../../data/menu');
     this.setState( { menu });
+
+    // axios.get('https://developers.zomato.com/api/v2.1/restaurant?', {
+    //   headers: {
+    //     'user-key': '31891738c44eba1f07cc87fd4d387df9'
+    //   },
+    //   params: {
+    //     res_id: this.props.restaurant.id
+    //   }
+    // }).then((response) => {
+    //   if (response) {
+    //     console.log(response.data);
+    //     // const restaurants = response.data["restaurants"];
+    //     // this.setState({ restaurants });
+    //   }
+    // }).catch(function (error) {
+    //   console.log(error)
+    // });
   }
 
   _renderItem = ({item}) => {
     return (
         <MenuDetail key={item.id} menu={item}/>
     );
-  }
+  };
 
   _keyExtractor = (item, index) => item.id;
+
   render() {
     return (
         <Tabs initialPage={0}

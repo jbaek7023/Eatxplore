@@ -13,24 +13,40 @@ class RestaurantList extends Component {
   state = { restaurants: [] };
 
   componentWillMount() {
-      axios.get('https://developers.zomato.com/api/v2.1/search?', {
-        headers: {
-          'user-key': '31891738c44eba1f07cc87fd4d387df9'
-        },
-        params: {
-          count: 3,
-          lat: 33.7749,
-          lon: -84.3964,
-          sort: 'real_distance'
-        }
-      }).then((response) => {
-        if (response) {
-          const restaurants = response.data["restaurants"];
-          this.setState({ restaurants });
-        }
-      }).catch(function (error) {
-        console.log(error)
-      });
+    axios.get('https://developers.zomato.com/api/v2.1/search?', {
+      headers: {
+        'user-key': '31891738c44eba1f07cc87fd4d387df9'
+      },
+      params: {
+        count: 3,
+        lat: 33.7749,
+        lon: -84.3964,
+        sort: 'real_distance'
+      }
+    }).then((response) => {
+      if (response) {
+        const restaurants = response.data["restaurants"];
+        this.setState({ restaurants });
+      }
+    }).catch(function (error) {
+      console.log(error)
+    });
+    // axios.get('https://api.foursquare.com/v2/venues/search?', {
+    //   params: {
+    //     client_id: 'VU5DQQC2SLDQBGAPDG3OC50YJO5AJRO1JWACO1BSFW4M25UL',
+    //     client_secret: 'TC1P2JQA4NP0OKUBXDZPITHJCT2WI020EYRDKNVRMYKOMTRV',
+    //     ll: '33.7749,-84.3964',
+    //     intent:'browse',
+    //     radius: 1000,
+    //     limit: 1,
+    //     categoryId: '4d4b7105d754a06374d81259',
+    //     v: '20180326'
+    //   }
+    // }).then((response) => {
+    //   console.log(response.data.response.venues);
+    // }).catch(function (error) {
+    //   console.log(error)
+    // });
   }
 
   _renderItem = ({item}) => {

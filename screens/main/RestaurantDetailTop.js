@@ -3,7 +3,7 @@ import { View, Text, Image } from 'react-native';
 import { FontAwesome } from '../../assets/icons';
 
 const RestaurantDetailTop = ({ restaurant }) => {
-  const { name, type, distance,image } = restaurant;
+  const { name, cuisines, distance, image } = restaurant;
 
   return (
     <View style={styles.restaurantBoxStyle}>
@@ -16,7 +16,7 @@ const RestaurantDetailTop = ({ restaurant }) => {
       <View style={styles.restaurantBottomContainer}>
         <View style={styles.restaurantLeftContainer}>
           <Text style={styles.restaurantTitle}>{ name }</Text>
-          <Text style={styles.restaurantKind}>{ type }</Text>
+          <Text style={styles.restaurantKind}>{ cuisines }</Text>
         </View>
         <View style={styles.restaurantRightContainer}>
           <Text><Text style={styles.awesome}>{FontAwesome.place}</Text> { distance } miles</Text>

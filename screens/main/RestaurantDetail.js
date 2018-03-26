@@ -44,7 +44,7 @@ class RestaurantDetail extends Component {
           />
           <ScrollView style={styles.listContainer}>
             <RestaurantDetailTop restaurant={restaurant}/>
-            <RestaurantDetailBottom menu={menu}/>
+            <RestaurantDetailBottom restaurant={restaurant}/>
           </ScrollView>
         </View>
       );
