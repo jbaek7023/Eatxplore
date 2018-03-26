@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nationality":"Chinese",
+    "username":"Jessie Wang",
+    "userImage": "https://smileyfaceplace.weebly.com/uploads/6/9/7/1/6971266/4141363_orig.jpg",
+    "rate": 4,
+    "comment":"This dishes taste good for me, it doesn't contain any uncommon ingredient. The sauce is a little bit sweet, but I like it very much!"
+  },
+  {
+    "id": 2,
+    "nationality":"Mexican",
+    "username":"Maria Guadalupe",
+    "userImage": "https://smileyfaceplace.weebly.com/uploads/6/9/7/1/6971266/3367853_orig.jpg",
+    "rate": 5,
+    "comment":"This dish is a traditional Mexico dish. I would say this restaurant made it very well. Just like what I ate in local Mexico restaurant. It worth a try if you are a new comer to the restaurant."
+  }
+]

@@ -5,20 +5,30 @@ import RestaurantListItem from "./RestaurantListItem";
 import Header from '../../components/Header';
 import axios from 'axios';
 import {FontAwesome} from "../../assets/icons";
+import ReviewListItem from "./ReviewListItem";
+
 
 class MenuDetail extends Component {
   static navigationOptions = {
     title: 'Menu',
   };
 
-  // _renderItem = ({item}) => {
-  //   return (
-  //       // <RestaurantListItem key={item.restaurant.id} restaurant={item} navigation={this.props.navigation}/>
-  //       <RestaurantListItem key={item.id} restaurant={item} navigation={this.props.navigation}/>
-  //   );
-  // }
+  state = { reviews: [] };
 
-  // _keyExtractor = (item, index) => item.id;
+  componentWillMount () {
+    var reviews = require('../../data/reviews');
+    this.setState({ reviews });
+  };
+
+
+  _renderItem = ({item}) => {
+    return (
+        <ReviewListItem key={item.id} review={item} navigation={this.props.navigation}/>
+        // <RestaurantListItem key={item.id} restaurant={item} navigation={this.props.navigation}/>
+    );
+  }
+
+  _keyExtractor = (item, index) => item.id;
 
 
   _drawerToggle = () => {
@@ -35,6 +45,7 @@ class MenuDetail extends Component {
                 headerText={menu.name}
                 navigation={this.props.navigation}
                 drawerToggle={this._drawerToggle}
+                back={true}
             />
             <ScrollView style={styles.listContainer}>
               <View style={styles.menuContainer}>
@@ -51,9 +62,14 @@ class MenuDetail extends Component {
                     <Text style={styles.descriptionStyle}>{menu.description}</Text>
                   </View>
                   <Text>Add a review</Text>
-
                 </View>
-
+              </View>
+              <View>
+                <FlatList
+                  data={this.state.reviews}
+                  keyExtractor={this._keyExtractor}
+                  renderItem={this._renderItem}
+                />
               </View>
             </ScrollView>
           </View>
@@ -89,6 +105,8 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 150,
     paddingLeft: 10,
+    borderBottomWidth: 1,
+    borderColor: 'black',
   },
   menuImageContainer: {
     width: 140,
