@@ -73,7 +73,7 @@ class LoginScreen extends Component {
                   iosHeader="Select Dietary Restriction"
                   mode="dropdown"
                   selectedValue={this.state.restriction}
-                  onValueChange={restriction => this.setState( {restriction })}>
+                  onValueChange={restriction => this.setState({ restriction })}>
                 {this.state.restrictions.map((rest) => {
                   return <Item label = {rest} value = {rest} key = {rest} />
                 })}

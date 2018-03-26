@@ -3,6 +3,7 @@ import { ScrollView, View, FlatList, Text, StyleSheet } from 'react-native';
 import { H1, H2, H3 } from 'native-base';
 import RestaurantListItem from "./RestaurantListItem";
 import Header from '../../components/Header';
+import axios from 'axios';
 
 class RestaurantList extends Component {
   static navigationOptions = {
@@ -12,8 +13,24 @@ class RestaurantList extends Component {
   state = { restaurants: [] };
 
   componentWillMount() {
-    var restaurants = require('../../data/restaurants');
-    this.setState( { restaurants });
+      axios.get('https://developers.zomato.com/api/v2.1/search?', {
+        headers: {
+          'user-key': '31891738c44eba1f07cc87fd4d387df9'
+        },
+        params: {
+          count: 3,
+          lat: 33.7833,
+          lon: -84.3831,
+          sort: 'real_distance'
+        }
+      }).then(function (response) {
+        if (response) {
+          console.log(response.data["restaurants"]);
+          // this.setState({ restaurants: response.data["restaurants"] });
+        }
+      }).catch(function (error) {
+        console.log(error)
+      });
   }
 
   _renderItem = ({item}) => {
