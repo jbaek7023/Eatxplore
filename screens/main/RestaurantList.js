@@ -19,13 +19,13 @@ class RestaurantList extends Component {
         },
         params: {
           count: 3,
-          lat: 33.7833,
-          lon: -84.3831,
+          lat: 33.7749,
+          lon: -84.3964,
           sort: 'real_distance'
         }
       }).then((response) => {
         if (response) {
-          restaurants = response.data["restaurants"]
+          const restaurants = response.data["restaurants"];
           this.setState({ restaurants });
         }
       }).catch(function (error) {
@@ -35,19 +35,18 @@ class RestaurantList extends Component {
 
   _renderItem = ({item}) => {
     return (
-      <RestaurantListItem key={item.restaurant.R.res_id} restaurant={item} navigation={this.props.navigation}/>
+      <RestaurantListItem key={item.restaurant.id} restaurant={item} navigation={this.props.navigation}/>
     );
   }
 
-  _keyExtractor = (item, index) => item.restaurant.R.res_id;
+  _keyExtractor = (item, index) => item.restaurant.id;
 
   _drawerToggle = () => {
     this.props.navigation.navigate('DrawerOpen');
   }
 
   render() {
-    let { restaurants } = this.state;
-    if (restaurants) {
+    if (this.state.restaurants) {
       return (
         <View style={{flex:1}}>
           <Header
@@ -61,7 +60,7 @@ class RestaurantList extends Component {
               <Text>Based on your location</Text>
             </View>
             <FlatList
-              data={restaurants}
+              data={this.state.restaurants}
               keyExtractor={this._keyExtractor}
               renderItem={this._renderItem}
             />

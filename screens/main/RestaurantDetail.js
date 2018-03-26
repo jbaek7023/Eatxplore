@@ -11,11 +11,11 @@ class RestaurantDetail extends Component {
     title: 'List',
   };
 
-  state = { restaurants: [] };
+  state = { menu: [] };
 
   componentWillMount() {
-    var restaurants = require('../../data/restaurants');
-    this.setState({ restaurants });
+    var menu = require('../../data/menu');
+    this.setState({ menu });
   }
 
   _renderItem = ({item}) => {
@@ -32,8 +32,8 @@ class RestaurantDetail extends Component {
 
   render() {
     let { restaurant } = this.props.navigation.state.params;
-    let { restaurants } = this.state;
-    if (restaurants) {
+    let { menu } = this.state;
+    if (menu) {
       return (
         <View style={{flex:1, backgroundColor: 'white'}}>
           <Header
@@ -44,7 +44,7 @@ class RestaurantDetail extends Component {
           />
           <ScrollView style={styles.listContainer}>
             <RestaurantDetailTop restaurant={restaurant}/>
-            <RestaurantDetailBottom/>
+            <RestaurantDetailBottom menu={menu}/>
           </ScrollView>
         </View>
       );

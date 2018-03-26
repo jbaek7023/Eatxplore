@@ -5,11 +5,12 @@ import { FontAwesome } from '../../assets/icons';
 
 class RestaurantListItem extends Component {
   _pressItem = (restaurant) => {
+    console.log(restaurant);
     this.props.navigation.navigate('RestaurantDetail', {restaurant});
   }
 
   render() {
-    const { name, type, distance, image } = this.props.restaurant;
+    const { id, name, cuisines, distance, thumb } = this.props.restaurant.restaurant;
     const { headerContentStyle } = styles;
 
     return (
@@ -17,13 +18,15 @@ class RestaurantListItem extends Component {
         <TouchableOpacity style={styles.imageContainer} onPress={()=>{this._pressItem(this.props.restaurant)}}>
           <Image
             style={styles.imageStyle}
-            source={{uri: image}}
+            // source={{uri: thumb}}
+            source={{uri: 'https://screenshotlayer.com/images/assets/placeholder.png'}}
+            onError={(error) => console.log(error)}
           />
         </TouchableOpacity>
         <View style={styles.restaurantBottomContainer}>
           <View style={styles.restaurantLeftContainer}>
             <Text style={styles.restaurantTitle}>{ name }</Text>
-            <Text style={styles.restaurantKind}>{ type }</Text>
+            <Text style={styles.restaurantKind}>{ cuisines }</Text>
           </View>
           <View style={styles.restaurantRightContainer}>
             <Text><Text style={styles.awesome}>{FontAwesome.place}</Text> { distance } miles</Text>
