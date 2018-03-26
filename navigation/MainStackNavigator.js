@@ -2,6 +2,7 @@ import { StackNavigator } from 'react-navigation';
 import RestaurantList from '../screens/main/RestaurantList';
 import RestaurantDetail from '../screens/main/RestaurantDetail';
 import LoginScreen from "../screens/auth/LoginScreen";
+import MenuDetail from "../screens/main/MenuDetail";
 
 
 export default StackNavigator ({
@@ -14,6 +15,9 @@ export default StackNavigator ({
   RestaurantDetail: {
     screen: RestaurantDetail,
   },
+  MenuDetail: {
+    screen: MenuDetail,
+  }
 }, {
     header: null,
     headerMode: 'none',

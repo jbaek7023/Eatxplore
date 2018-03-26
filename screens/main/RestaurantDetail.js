@@ -43,8 +43,8 @@ class RestaurantDetail extends Component {
             back={true}
           />
           <ScrollView style={styles.listContainer}>
-            <RestaurantDetailTop restaurant={restaurant}/>
-            <RestaurantDetailBottom restaurant={restaurant}/>
+            <RestaurantDetailTop restaurant={restaurant} navigation={this.props.navigation}/>
+            <RestaurantDetailBottom restaurant={restaurant} navigation={this.props.navigation}/>
           </ScrollView>
         </View>
       );

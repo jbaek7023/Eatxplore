@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, FlatList } from 'react-native';
 import { FontAwesome } from '../../assets/icons';
 import { Tab, Tabs } from 'native-base';
-import { MenuDetail } from "./MenuDetail";
+import { MenuListItem } from "./MenuListItem";
 import axios from 'axios';
 
 class RestaurantDetailBottom extends Component {
   state = { menu: [] };
 
   componentWillMount() {
-    console.log(this.props.restaurant.name);
+    // console.log(this.props.restaurant.name);
     var menu = require('../../data/menu');
     this.setState( { menu });
 
@@ -33,7 +33,7 @@ class RestaurantDetailBottom extends Component {
 
   _renderItem = ({item}) => {
     return (
-        <MenuDetail key={item.id} menu={item}/>
+        <MenuListItem key={item.id} menu={item} navigation={this.props.navigation}/>
     );
   };
 

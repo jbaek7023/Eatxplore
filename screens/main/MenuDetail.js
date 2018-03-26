@@ -1,66 +1,117 @@
-import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { H2, H3 } from 'native-base';
+import React, { Component } from 'react';
+import { ScrollView, View, FlatList, Text, StyleSheet, Image } from 'react-native';
+import { H1, H2, H3 } from 'native-base';
+import RestaurantListItem from "./RestaurantListItem";
+import Header from '../../components/Header';
+import axios from 'axios';
+import {FontAwesome} from "../../assets/icons";
 
-const MenuDetail = ({ menu }) => {
-  const { name, type, price, description, image } = menu;
-  const { imageStyle } = styles
+class MenuDetail extends Component {
+  static navigationOptions = {
+    title: 'Menu',
+  };
 
-  return (
-    <TouchableOpacity style={styles.menuItemContainer}>
-      <View style={styles.imageContainer}>
-        <Image
-          style={ imageStyle }
-          source={{uri: image}}/>
-      </View>
-      <View style={styles.textContainer}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <H3 style={{fontWeight: 'bold'}}>{ name }</H3>
-          <Text style={{marginRight: 20}}>$ {price}</Text>
-        </View>
-        <View style={{marginBottom: 5}}>
-          <Text>{ type }</Text>
-        </View>
-        <View>
-          <Text>{ description }</Text>
-        </View>
-      </View>
+  // _renderItem = ({item}) => {
+  //   return (
+  //       // <RestaurantListItem key={item.restaurant.id} restaurant={item} navigation={this.props.navigation}/>
+  //       <RestaurantListItem key={item.id} restaurant={item} navigation={this.props.navigation}/>
+  //   );
+  // }
 
-    </TouchableOpacity>
+  // _keyExtractor = (item, index) => item.id;
 
-  );
+
+  _drawerToggle = () => {
+    this.props.navigation.navigate('DrawerOpen');
+  }
+
+  render() {
+    let { menu } = this.props.navigation.state.params;
+    console.log(menu);
+    if (menu) {
+      return (
+          <View style={{flex:1, backgroundColor: 'white'}}>
+            <Header
+                headerText={menu.name}
+                navigation={this.props.navigation}
+                drawerToggle={this._drawerToggle}
+            />
+            <ScrollView style={styles.listContainer}>
+              <View style={styles.menuContainer}>
+                <View style={styles.menuImageContainer}>
+                  <Image
+                      style={styles.menuImageStyle}
+                      source={{uri: menu.image}}/>
+                </View>
+                <View style={styles.menuContentContainer}>
+
+                  <H3 style={{fontWeight: 'bold'}}>{menu.name}</H3>
+                  <Text><Text style={styles.awesome}>{FontAwesome.thumbsUp}</Text> Liked by 2 people</Text>
+                  <View>
+                    <Text style={styles.descriptionStyle}>{menu.description}</Text>
+                  </View>
+                  <Text>Add a review</Text>
+
+                </View>
+
+              </View>
+            </ScrollView>
+          </View>
+      );
+    }
+    {/*<View style={styles.locationTitleContainer}>*/}
+      {/*<H2 style={styles.locationTitle}>You Might Be At...</H2>*/}
+      {/*<Text>Based on your location</Text>*/}
+    {/*</View>*/}
+    {/*<FlatList*/}
+    {/*data={this.state.restaurants}*/}
+    {/*keyExtractor={this._keyExtractor}*/}
+    {/*renderItem={this._renderItem}*/}
+    {/*/>*/}
+    return <View/>;
+  }
 }
 
-const styles = {
-  menuItemContainer: {
-    flex: 1,
+const styles = StyleSheet.create({
+  // locationTitleContainer: {
+  //   padding: 15,
+  //   paddingTop: 25,
+  //   paddingBottom: 0,
+  // },
+  // locationTitle: {
+  //   fontWeight: 'bold',
+  // },
+  // listContainer: {
+  //   backgroundColor: '#FFFFFF',
+  // },
+  menuContainer: {
     flexDirection: 'row',
-    margin:5,
-    borderWidth:1,
-    borderColor: '#AAAAAA',
-  },
-  imageContainer: {
-    height: 100,
-    width: 100,
-  },
-  textContainer: {
-    paddingLeft: 7,
-    paddingBottom: 7,
-    paddingTop: 7,
     flex: 1,
-    flexWrap: 'wrap',
+    height: 150,
+    paddingLeft: 10,
   },
-  headerContentStyle: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
+  menuImageContainer: {
+    width: 140,
+    height: 140,
   },
-  imageStyle: {
-    height: 300,
+  menuImageStyle: {
+    width: 130,
+    height: 130,
+    margin: 5,
+  },
+  menuContentContainer: {
+    padding: 10,
     flex: 1,
-    width: null
-  }
-};
+    justifyContent: 'space-around',
+    marginBottom: 10,
+  },
+  awesome : {
+    fontFamily: 'fontawesome'
+  },
+  descriptionStyle: {
+    textDecorationLine: 'underline',
+  },
+});
 
-export { MenuDetail };
+
+export default MenuDetail;
