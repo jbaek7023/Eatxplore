@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaee017f-525c-4a47-8a1c-5ae75c6b1506" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/screens/main/RestaurantDetail.js" afterPath="$PROJECT_DIR$/screens/main/RestaurantDetail.js" />
-      <change beforePath="$PROJECT_DIR$/screens/main/RestaurantDetailBottom.js" afterPath="$PROJECT_DIR$/screens/main/RestaurantDetailBottom.js" />
-      <change beforePath="$PROJECT_DIR$/screens/main/RestaurantDetailTop.js" afterPath="$PROJECT_DIR$/screens/main/RestaurantDetailTop.js" />
       <change beforePath="$PROJECT_DIR$/screens/main/RestaurantList.js" afterPath="$PROJECT_DIR$/screens/main/RestaurantList.js" />
       <change beforePath="$PROJECT_DIR$/screens/main/RestaurantListItem.js" afterPath="$PROJECT_DIR$/screens/main/RestaurantListItem.js" />
     </list>
@@ -24,8 +20,8 @@
       <file leaf-file-name="RestaurantList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/main/RestaurantList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1368">
-              <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+            <state relative-caret-position="989">
+              <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -43,24 +39,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestaurantListItem.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RestaurantListItem.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/screens/main/RestaurantListItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="345">
+              <caret line="18" column="107" lean-forward="false" selection-start-line="18" selection-start-column="107" selection-end-line="18" selection-end-column="107" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestaurantDetail.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RestaurantDetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/screens/main/RestaurantDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+            <state relative-caret-position="345">
+              <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="restaurants.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/restaurants.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,10 +114,10 @@
       <find>drawer</find>
       <find>R.res_id</find>
       <find>restaurants</find>
-      <find>restaurant.name</find>
       <find>`</find>
       <find>Tabs</find>
       <find>this.props.nav</find>
+      <find>restaurant.name</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot; },</replace>
@@ -151,10 +157,10 @@
         <option value="$PROJECT_DIR$/screens/main/MenuList.js" />
         <option value="$PROJECT_DIR$/screens/auth/LoginScreen.js" />
         <option value="$PROJECT_DIR$/screens/main/RestaurantDetailTop.js" />
-        <option value="$PROJECT_DIR$/screens/main/RestaurantListItem.js" />
         <option value="$PROJECT_DIR$/screens/main/RestaurantDetail.js" />
-        <option value="$PROJECT_DIR$/screens/main/RestaurantList.js" />
         <option value="$PROJECT_DIR$/screens/main/RestaurantDetailBottom.js" />
+        <option value="$PROJECT_DIR$/screens/main/RestaurantList.js" />
+        <option value="$PROJECT_DIR$/screens/main/RestaurantListItem.js" />
       </list>
     </option>
   </component>
@@ -168,7 +174,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="950" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
     <option name="width" value="980" />
     <option name="height" value="1030" />
   </component>
@@ -293,12 +300,12 @@
       <workItem from="1522024918085" duration="8033000" />
       <workItem from="1522040888999" duration="7575000" />
       <workItem from="1522069792929" duration="31000" />
-      <workItem from="1522071186982" duration="1068000" />
+      <workItem from="1522071186982" duration="3339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65919000" />
+    <option name="totallyTimeSpent" value="68190000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -478,13 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/restaurants.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screens/auth/LoginScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -532,22 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/screens/main/RestaurantListItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/screens/main/MenuDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/screens/main/RestaurantDetailBottom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -568,21 +552,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/screens/main/RestaurantList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1368">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="989">
+          <caret line="55" column="9" lean-forward="false" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/restaurants.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/screens/main/RestaurantDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
+        <state relative-caret-position="345">
+          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="20" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/main/MenuDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="24" column="21" lean-forward="false" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/screens/main/RestaurantListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="18" column="107" lean-forward="false" selection-start-line="18" selection-start-column="107" selection-end-line="18" selection-end-column="107" />
+          <folding />
         </state>
       </provider>
     </entry>

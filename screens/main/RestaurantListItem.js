@@ -5,28 +5,31 @@ import { FontAwesome } from '../../assets/icons';
 
 class RestaurantListItem extends Component {
   _pressItem = (restaurant) => {
-    console.log(restaurant.id);
+    // console.log(restaurant.id);
     this.props.navigation.navigate('RestaurantDetail', {restaurant});
   }
 
   render() {
-    const { id, name, cuisines, distance, thumb } = this.props.restaurant.restaurant;
+    const { name, type, distance, image } = this.props.restaurant;
+    // const { id, name, cuisines, distance, thumb } = this.props.restaurant.restaurant;
     const { headerContentStyle } = styles;
 
     return (
       <View style={styles.restaurantBoxStyle}>
-        <TouchableOpacity style={styles.imageContainer} onPress={()=>{this._pressItem(this.props.restaurant.restaurant)}}>
+        <TouchableOpacity style={styles.imageContainer} onPress={()=>{this._pressItem(this.props.restaurant)}}>
           <Image
             style={styles.imageStyle}
             // source={{uri: thumb}}
-            source={{uri: 'https://screenshotlayer.com/images/assets/placeholder.png'}}
-            onError={(error) => console.log(error)}
+            // source={{uri: 'https://screenshotlayer.com/images/assets/placeholder.png'}}
+            // onError={(error) => console.log(error)}
+            source={{uri: image}}
           />
         </TouchableOpacity>
         <View style={styles.restaurantBottomContainer}>
           <View style={styles.restaurantLeftContainer}>
             <Text style={styles.restaurantTitle}>{ name }</Text>
-            <Text style={styles.restaurantKind}>{ cuisines }</Text>
+            <Text style={styles.restaurantKind}>{ type }</Text>
+            {/*<Text style={styles.restaurantKind}>{ cuisines }</Text>*/}
           </View>
           <View style={styles.restaurantRightContainer}>
             <Text><Text style={styles.awesome}>{FontAwesome.place}</Text> { distance } miles</Text>
