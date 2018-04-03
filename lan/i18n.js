@@ -21,13 +21,27 @@ i18n
     resources: {
       en: {
         home: {
-          title: 'Welcome'
-        }
+          title: 'Based on your location',
+          oh: 'Order History',
+        },
       },
-      de: {
+      es: {
         home: {
-          title: 'Willkommen'
-        }
+          title: 'De acuerdo con tu ubicación',
+          oh: 'Historial de pedidos',
+        },
+      },
+      ko: {
+        home: {
+          title: '현재주소에 따른 레스토랑입니다.',
+          oh: '주문내역',
+        },
+      },
+      ch: {
+        home: {
+          title: '根據您的位置',
+          oh: '訂單歷史',
+        },
       },
       // have a initial namespace
       ns: ['translation'],

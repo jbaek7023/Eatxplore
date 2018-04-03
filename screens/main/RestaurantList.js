@@ -72,10 +72,6 @@ class RestaurantList extends Component {
 
   render() {
     const { t, i18n, navigation } = this.props;
-    console.log('passing');
-    console.log(t('common:currentLanguage', { lng: i18n.language }));
-    console.log(t('home:title', { lng: i18n.language }));
-
     if (this.state.restaurants) {
       return (
         <View style={{flex:1}}>
@@ -87,14 +83,21 @@ class RestaurantList extends Component {
           <ScrollView style={styles.listContainer}>
             <View style={styles.locationTitleContainer}>
               <H2 style={styles.locationTitle}>You Might Be At...</H2>
-              <Text>Based on your location</Text>
-              <TouchableOpacity onPress={()=> i18n.changeLanguage('de')}>
-                <Text>Translate to Spanish</Text>
-              </TouchableOpacity>
+              <H3>{t('home:title', { lng: i18n.language })}</H3>
+              <H3>{t('home:oh', { lng: i18n.language })}</H3>
               <TouchableOpacity onPress={()=> i18n.changeLanguage('en')}>
                 <Text>Translate to English</Text>
               </TouchableOpacity>
-              <Text>{t('home:title', { lng: i18n.language })}</Text>
+              <TouchableOpacity onPress={()=> i18n.changeLanguage('es')}>
+                <Text>Translate to Spanish</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={()=> i18n.changeLanguage('ko')}>
+                <Text>Translate to Korean</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={()=> i18n.changeLanguage('ch')}>
+                <Text>Translate to Chinese</Text>
+              </TouchableOpacity>
+
             </View>
             <FlatList
               data={this.state.restaurants}
