@@ -1,6 +1,11 @@
 import { Notifications } from 'expo';
 import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
+// the previous created file
+import i18n from '../lan/i18n';
+
+// Localization
+import { I18nextProvider, translate } from 'react-i18next';
 
 import MainDrawerNavigator from './MainDrawerNavigator';
 import AuthStackNavigator from './AuthStackNavigator';
@@ -29,6 +34,17 @@ const RootTabNavigator = TabNavigator ({
   }
 );
 
+// Wrapping a stack with translation hoc asserts we trigger new render on language change
+// the hoc is set to only trigger rerender on languageChanged
+const WrappedRootTabNavigator = () => {
+  return <RootTabNavigator screenProps={{ t: i18n.getFixedT() }} />;
+}
+
+const ReloadAppOnLanguageChange = translate('translation', {
+  bindI18n: 'languageChanged',
+  bindStore: false
+})(WrappedRootTabNavigator);
+
 export default class RootNavigator extends React.Component {
   componentDidMount() {
     this._notificationSubscription = this._registerForPushNotifications();
@@ -39,7 +55,11 @@ export default class RootNavigator extends React.Component {
   }
 
   render() {
-    return <RootTabNavigator />;
+    return (
+      <I18nextProvider i18n={ i18n }>
+        <ReloadAppOnLanguageChange />
+      </I18nextProvider>
+    );
   }
 
   _registerForPushNotifications() {

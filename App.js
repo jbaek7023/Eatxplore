@@ -8,7 +8,6 @@ import store from './store';
 // import navigation
 import RootNavigation from './navigation/RootNavigation';
 
-
 import { AppLoading, Asset, Font } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 

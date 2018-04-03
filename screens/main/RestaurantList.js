@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { ScrollView, View, FlatList, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, FlatList, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { H1, H2, H3 } from 'native-base';
 import RestaurantListItem from "./RestaurantListItem";
 import Header from '../../components/Header';
+import { Loc } from 'redux-react-native-i18n'
 import axios from 'axios';
+import { connect } from 'react-redux';
 
+import { translate } from 'react-i18next';
+@translate(['home', 'common'], { wait: true })
 class RestaurantList extends Component {
   static navigationOptions = {
     title: 'List',
@@ -67,6 +71,11 @@ class RestaurantList extends Component {
   }
 
   render() {
+    const { t, i18n, navigation } = this.props;
+    console.log('passing');
+    console.log(t('common:currentLanguage', { lng: i18n.language }));
+    console.log(t('home:title', { lng: i18n.language }));
+
     if (this.state.restaurants) {
       return (
         <View style={{flex:1}}>
@@ -79,6 +88,13 @@ class RestaurantList extends Component {
             <View style={styles.locationTitleContainer}>
               <H2 style={styles.locationTitle}>You Might Be At...</H2>
               <Text>Based on your location</Text>
+              <TouchableOpacity onPress={()=> i18n.changeLanguage('de')}>
+                <Text>Translate to Spanish</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={()=> i18n.changeLanguage('en')}>
+                <Text>Translate to English</Text>
+              </TouchableOpacity>
+              <Text>{t('home:title', { lng: i18n.language })}</Text>
             </View>
             <FlatList
               data={this.state.restaurants}
@@ -107,5 +123,9 @@ const styles = StyleSheet.create({
   },
 });
 
+const mapStateToProps = ( { i18n: { currentLanguage, dictionaries } }, ownProps ) => ({
+    currentLanguage,
+    dictionary: dictionaries[ currentLanguage ]
+})
 
 export default RestaurantList;
