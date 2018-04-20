@@ -7,7 +7,6 @@ const routes = ['Home', 'Profile', 'Language Setting'];
 // This is a drawer
 export default class SideBar extends Component {
   render() {
-    console.log(this.props)
     const { t, i18n, navigation } = this.props;
     return (
       <Container>

@@ -2,13 +2,14 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { H2, H3 } from 'native-base';
 
-const MenuListItem = ({ menu, navigation }) => {
+const MenuListItem = ({ menu, navigation, t, i18n }) => {
   const { name, type, price, description, image } = menu;
   const { imageStyle } = styles;
 
   _pressItem = (menu) => {
     // console.log(this);
-    navigation.navigate('MenuDetail', {menu});
+
+    navigation.navigate('MenuDetail', {menu, t, i18n});
   };
 
   return (
@@ -16,7 +17,7 @@ const MenuListItem = ({ menu, navigation }) => {
       <View style={styles.imageContainer}>
         <Image
           style={ imageStyle }
-          source={{uri: image}}/>
+          source={{uri: menu.link}}/>
       </View>
       <View style={styles.textContainer}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>

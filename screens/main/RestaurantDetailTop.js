@@ -3,14 +3,15 @@ import { View, Text, Image } from 'react-native';
 import { FontAwesome } from '../../assets/icons';
 
 const RestaurantDetailTop = ({ restaurant }) => {
-  const { name, cuisines, distance, image } = restaurant;
-
+  const { name, cuisines, distance, image, link } = restaurant;
+  // const { t, i18n, navigation } = this.props;
+  // {t('rl:ymba', { lng: i18n.language })}
   return (
     <View style={styles.restaurantBoxStyle}>
       <View style={styles.imageContainer}>
         <Image
           style={styles.imageStyle}
-          source={{uri: image}}
+          source={{uri: link}}
         />
       </View>
       <View style={styles.restaurantBottomContainer}>

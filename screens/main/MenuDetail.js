@@ -37,7 +37,7 @@ class MenuDetail extends Component {
 
   render() {
     let { menu } = this.props.navigation.state.params;
-    console.log(menu);
+    const { t, i18n } = this.props.navigation.state.params;
     if (menu) {
       return (
           <View style={{flex:1, backgroundColor: 'white'}}>
@@ -57,11 +57,11 @@ class MenuDetail extends Component {
                 <View style={styles.menuContentContainer}>
 
                   <H3 style={{fontWeight: 'bold'}}>{menu.name}</H3>
-                  <Text><Text style={styles.awesome}>{FontAwesome.thumbsUp}</Text> Liked by 2 people</Text>
+                  <Text><Text style={styles.awesome}>{FontAwesome.thumbsUp}</Text> {t('md:like', { lng: i18n.language })} 2</Text>
                   <View>
                     <Text style={styles.descriptionStyle}>{menu.description}</Text>
                   </View>
-                  <Text>Add a review</Text>
+                  <Text>{t('md:review', { lng: i18n.language })}</Text>
                 </View>
               </View>
               <View>

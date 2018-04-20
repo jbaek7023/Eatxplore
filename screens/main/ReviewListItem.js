@@ -8,6 +8,7 @@ class ReviewListItem extends Component {
 
   render() {
     let { review } = this.props;
+
     return (
         <View key={review.id} style={styles.reviewContainer}>
           <View>

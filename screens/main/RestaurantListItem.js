@@ -5,15 +5,17 @@ import { FontAwesome } from '../../assets/icons';
 
 class RestaurantListItem extends Component {
   _pressItem = (restaurant) => {
+    const { t, i18n, navigation } = this.props;
     // console.log(restaurant.id);
-    this.props.navigation.navigate('RestaurantDetail', {restaurant});
+    this.props.navigation.navigate('RestaurantDetail', {restaurant, t, i18n});
   }
 
   render() {
-    const { name, type, distance, image } = this.props.restaurant;
-    // const { id, name, cuisines, distance, thumb } = this.props.restaurant.restaurant;
+    const { t, i18n, navigation, distance } = this.props;
+    const { name, type, img, link } = this.props.restaurant;
+    // const { id, name, cuisines, thumb } = this.props.restaurant.restaurant;
     const { headerContentStyle } = styles;
-
+    console.log(link);
     return (
       <View style={styles.restaurantBoxStyle}>
         <TouchableOpacity style={styles.imageContainer} onPress={()=>{this._pressItem(this.props.restaurant)}}>
@@ -22,7 +24,7 @@ class RestaurantListItem extends Component {
             // source={{uri: thumb}}
             // source={{uri: 'https://screenshotlayer.com/images/assets/placeholder.png'}}
             // onError={(error) => console.log(error)}
-            source={{uri: image}}
+            source={{uri: link}}
           />
         </TouchableOpacity>
         <View style={styles.restaurantBottomContainer}>
@@ -40,6 +42,7 @@ class RestaurantListItem extends Component {
     );
   }
 }
+
 
 const styles = {
   restaurantLeftContainer: {

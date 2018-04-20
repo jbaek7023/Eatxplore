@@ -31,6 +31,8 @@ class RestaurantDetail extends Component {
   }
 
   render() {
+    //const { t, i18n, navigation } = this.props;
+    const { t, i18n } = this.props.navigation.state.params;
     let { restaurant } = this.props.navigation.state.params;
     let { menu } = this.state;
     if (menu) {
@@ -43,8 +45,8 @@ class RestaurantDetail extends Component {
             back={true}
           />
           <ScrollView style={styles.listContainer}>
-            <RestaurantDetailTop restaurant={restaurant} navigation={this.props.navigation}/>
-            <RestaurantDetailBottom restaurant={restaurant} navigation={this.props.navigation}/>
+            <RestaurantDetailTop restaurant={restaurant} navigation={this.props.navigation} t={t} i18n={i18n}/>
+            <RestaurantDetailBottom restaurant={restaurant} navigation={this.props.navigation} t={t} i18n={i18n}/>
           </ScrollView>
         </View>
       );
