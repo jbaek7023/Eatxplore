@@ -85,18 +85,7 @@ class RestaurantList extends Component {
               <H2 style={styles.locationTitle}>You Might Be At...</H2>
               <H3>{t('home:title', { lng: i18n.language })}</H3>
               <H3>{t('home:oh', { lng: i18n.language })}</H3>
-              <TouchableOpacity onPress={()=> i18n.changeLanguage('en')}>
-                <Text>Translate to English</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={()=> i18n.changeLanguage('es')}>
-                <Text>Translate to Spanish</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={()=> i18n.changeLanguage('ko')}>
-                <Text>Translate to Korean</Text>
-              </TouchableOpacity>
-              <TouchableOpacity onPress={()=> i18n.changeLanguage('ch')}>
-                <Text>Translate to Chinese</Text>
-              </TouchableOpacity>
+
 
             </View>
             <FlatList

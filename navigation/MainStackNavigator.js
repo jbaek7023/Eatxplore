@@ -3,7 +3,7 @@ import RestaurantList from '../screens/main/RestaurantList';
 import RestaurantDetail from '../screens/main/RestaurantDetail';
 import LoginScreen from "../screens/auth/LoginScreen";
 import MenuDetail from "../screens/main/MenuDetail";
-
+import LanguageSetting from '../screens/main/LanguageSetting';
 
 export default StackNavigator ({
   List: {
@@ -14,6 +14,9 @@ export default StackNavigator ({
   },
   RestaurantDetail: {
     screen: RestaurantDetail,
+  },
+  LanguageSetting: {
+    screen: LanguageSetting,
   },
   MenuDetail: {
     screen: MenuDetail,

@@ -10,6 +10,7 @@
     "react": "16.2.0",
     "react-i18next": "^7.5.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "react-native-scripts": "1.12.0",
     "react-native-star-rating": "^1.0.9",
     "react-navigation": "^1.4.0",
     "react-redux": "^5.0.7",

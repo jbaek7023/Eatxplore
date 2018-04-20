@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import { AppRegistry, Image, StatusBar } from 'react-native';
+import { AppRegistry, Image, StatusBar, TouchableOpacity } from 'react-native';
 import { Container, Content, Text, List, ListItem } from 'native-base';
 
-const routes = ['Home', 'Chat', 'Profile'];
+const routes = ['Home', 'Profile', 'Language Setting'];
 
 // This is a drawer
 export default class SideBar extends Component {
   render() {
+    console.log(this.props)
+    const { t, i18n, navigation } = this.props;
     return (
       <Container>
         <Content>
@@ -17,7 +19,7 @@ export default class SideBar extends Component {
               return (
                 <ListItem
                   button
-                  onPress={() => this.props.navigation.navigate(data)}>
+                  onPress={() => this.props.navigation.navigate('LanguageSetting')}>
                   <Text>{data}</Text>
                 </ListItem>
               );
