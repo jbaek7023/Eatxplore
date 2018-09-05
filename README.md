@@ -1,42 +1,24 @@
-# Happy Restaurant
+# Eatxplore (Eat and Explore!)
+Breaking the Cultural Barriers of Food
 
-### PLAN
-- Tab bar
-  1) Hamburger (Problem : https://github.com/react-navigation/react-navigation/issues/165
-  https://github.com/react-navigation/react-navigation/issues/1632)
+## What is Eatxplore?
+Eatxplore helps users in foreign restaurants understand the dishes that they are not familiar with. Eatsplore is built with React Native nad Django REST Framework and available in Android and iOS applications.
 
-- List
-1) Data
-2) Flatlist
+## Features
 
-- Restaurant Detail
-- Recommendation Tab Bar in two
-1) native-base tab bar
-2)
+### Recommendation
+Recommendations from people of same or similar background for users who are not familiar with different ethnic dishes. 
 
+### Translation
+Translation of dish names and ingredients into users’ native language to help users understand the dish better.
 
-# SCRUM
-1. List
-  - react-navigation
-  - TabBar at tome
-  - Hamburger button
+### Matched Reviews
+Provide reviews from users of similar background and taste. Reviews have photos and notes.
 
-2. Restaurant Detail
-  - Recommendation & - Full Menu Tap  
+### Ethnic Group
+Provide recommendation and reviews of local ethnic group to help people explore tradtionnal food of different culture.
 
-### Error
-1) Error on watchman at the beginning of the program run
-2.0-. jest-haste-map: Watchman crawl failed. Retrying once with node crawler.
-
-echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances
-echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events
-echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches
-watchman shutdown-server
-watchman watch-del-all
-and restart project
-
-2) Building error type:transform Error
-yarn remove babel-preset-react-native
-yarn add babel-preset-react-native@2.1.0
-
-3) ...
+## Project Video
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=r8u-o0t7gkE
+" target="_blank"><img src="http://img.youtube.com/vi/r8u-o0t7gkE/0.jpg"
+alt="Eatxplore" width="240" height="180" border="10" /></a>
