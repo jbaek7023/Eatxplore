@@ -1,8 +1,11 @@
 # Eatxplore (Eat and Explore!)
 Breaking the Cultural Barriers of Food
+![picture1](https://user-images.githubusercontent.com/35877802/45106361-72def500-b104-11e8-9866-2a133ca850e9.png)
 
 ## What is Eatxplore?
-Eatxplore helps users in foreign restaurants understand the dishes that they are not familiar with. Eatsplore is built with React Native nad Django REST Framework and available in Android and iOS applications.
+Eatxplore helps users in foreign restaurants understand the dishes that they are not familiar with. 
+
+Eatsplore is built with __React Native__ and __Django REST Framework__ and is available in __Android__ and __iOS__ applications.
 
 ## Features
 
