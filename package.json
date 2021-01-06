@@ -2,7 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-preset-react-native": "2.1.0",
     "expo": "^25.0.0",
     "i18next": "^10.6.0",
