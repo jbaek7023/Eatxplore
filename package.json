@@ -17,6 +17,6 @@
     "redux": "^3.7.2",
     "redux-react-native-i18n": "^1.0.0",
     "redux-thunk": "^2.2.0",
-    "yarn": "^1.5.1"
+    "yarn": "^1.22.0"
   }
 }
